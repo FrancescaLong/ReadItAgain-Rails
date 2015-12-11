@@ -11,7 +11,7 @@ Rails.application.routes.draw do
 
   post "/sessions", to: "sessions#create"
 
-  get "/sign_up", to: "users#new", as: "sign_up" 
+  get "/sign_up", to: "users#new", as: "sign_up" # not included in vagabond file
 
   delete "/logout", to: "sessions#destroy"
 
@@ -20,7 +20,13 @@ Rails.application.routes.draw do
 
   get "/children/:id", to: "children#show"
 
+ get "/children/:id/edit", to: "children#edit"
+
   #video routes
+  get "/videos", to: "videos#index", as: "videos"
+
+  get "/videos/new", to: "videos#new", as: "new_video"
+
   post "/videos", to: "videos#create"
 
   get "/videos/:id", to: "videos#show"
