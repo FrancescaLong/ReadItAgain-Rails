@@ -6,6 +6,37 @@ Rails.application.routes.draw do
   # root 'welcome#index'
   root to: 'welcome#index'
 
+  #user routes
+  get "/sign_in", to: "sessions#new"
+
+  post "/sessions", to: "sessions#create"
+
+  get "/sign_up", to: "users#new", as: "sign_up" 
+
+  delete "/logout", to: "sessions#destroy"
+
+  #children routes
+  get "/children", to: "children#index", as:"children"
+
+  get "/children/:id", to: "children#show"
+
+  #video routes
+  post "/videos", to: "videos#create"
+
+  get "/videos/:id", to: "videos#show"
+
+  get "/videos/:id/edit", to: "videos#edit"
+
+  post "videos/:id/include", to: "videos#include", as: "include_video"
+
+  post "videos/:id/hide", to: "videos#hide", as: "hide_video"
+
+  #resources
+  resources :users, :children, :videos, :sessions
+
+end
+
+
   # Example of regular route:
   #   get 'products/:id' => 'catalog#view'
 
@@ -15,8 +46,6 @@ Rails.application.routes.draw do
   # Example resource route (maps HTTP verbs to controller actions automatically):
   #   resources :products
 
-  # resources :creatures, only: [:index]
-  # resources :
 
   # Example resource route with options:
   #   resources :products do
@@ -58,4 +87,4 @@ Rails.application.routes.draw do
   #     # (app/controllers/admin/products_controller.rb)
   #     resources :products
   #   end
-end
+
