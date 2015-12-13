@@ -24,7 +24,7 @@ class UsersController < ApplicationController
 		else
 			@logged_in=false
 		end
-		render: show
+		render :show
 	end
 
 	def edit
