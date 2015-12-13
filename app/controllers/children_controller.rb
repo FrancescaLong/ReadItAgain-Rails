@@ -15,7 +15,7 @@ class ChildrenController < ApplicationController
 			@logged_in=false
 		end
 		p params[:id]
-		@videos = Video.where(:child_id => @ child.id).order(updated_at: :desc)
+		@videos = Video.where(:child_id => @child.id).order(updated_at: :desc)
 			@video = Video.new
 			render :show
 		end
