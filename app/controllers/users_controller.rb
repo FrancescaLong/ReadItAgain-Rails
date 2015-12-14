@@ -12,13 +12,19 @@ class UsersController < ApplicationController
 	end
 
 	def create
-		user_params.require(:user).permit(:name, :email, :password, :children)
-		@user.save # login the user
-		redirect_to "/users/#{@user.id}" # go to the user show page
+		user_params = params.require(:user).permit(:name, :email, :password) # , :children
+		@user = User.friendly.create(user_params)
+		if @user.save
+			session[:user_id] = @user.id
+			redirect_to @user, flash: { success: "Successfully signed up!" }
+		  else
+		  	redirect_to sign_up_path, flash: { error: @user.errors.full_message.to_sentence }
+		  end
+		login(@user) # login the user
 	end
 
 	def show
-		@user = User.find(params[:id])
+		@user = User.friendly.find(params[:id])
 		if logged_in?
 			@logged_in=true
 		else
@@ -34,12 +40,12 @@ class UsersController < ApplicationController
 			@logged_in=false
 		end
 		id = params[:id]
-		user = User.find(id)
+		user = User.friendly.find(params[:id])
 	end
 
 	def update
 		id = params[:id]
-		user = User.find(id)
+		user = User.friendly.find(params[:id])
 
 		update_attributes = paramas.require(:user).permit(:name, :email, :password, :children)
 		user.update_attributes(update_attributes)

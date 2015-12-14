@@ -1,1 +1,26 @@
 <%= render partial: "/layouts/navbar" %>
+
+<style> body{background-image: url("http://i.imgur.com/6kZaJLA.jpg");
+    background-size: cover; }
+    h3{color:purple}</style>
+    <br><br><br><br><br>
+<!-- <div class="row">
+ --><div class="col-md-4"></div>
+<div class= "panel col-md-4">
+<h3>Sign Up<br>to Create Your Own <i>Read It Again</i> Page.</h3><hr>
+<%= form_for @user do |f| %>
+	<div>
+		<%= f.text_field :name, placeholder: "Name", class: "form-control floating-label"  %>
+	</div><br>
+	<div>
+		<%= f.text_field :email, placeholder: "Email", class: "form-control floating-label"  %>
+	</div><br>
+	<div>
+		<%= f.password_field :password, placeholder: "Password", class: "form-control floating-label"  %>
+	</div><br>
+	<%= f.submit "Sign Up!!!!", :class => "button red btn btn-material-indigo"%>
+<% end %>
+<br>
+</div>
+<div class="col-md-4"></div>
+</div>
