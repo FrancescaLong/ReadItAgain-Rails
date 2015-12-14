@@ -16,10 +16,16 @@
 <br>
 <div class="row">
 <div class="col-md-6">
-<h1>Your Posts</h1>
-<% @posts.each do |post| %>
+<h1>Your Children</h1>
+<% @children.each do |post| %>
 <div class="yourpost">
-<h4><a href = "/posts/<%= post.id %>"><%= post.title %></a></h4> 
+<h4><a href = "/children/<%= child.id %>"><%= child.name %></a></h4> 
+
+
+<h1>Your Books</h1>
+<% @videos.each do |post| %>
+<div class="yourpost">
+<h4><a href = "/videos/<%= video.id %>"><%= video.title %></a></h4> 
 <p><%= post.content %></p>
     <% post_city = City.find(post.city_id)%>
   Post about <%=post_city.name%>, with a score of <%= post.get_likes.size - post.get_dislikes.size%>.
