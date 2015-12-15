@@ -29,14 +29,14 @@ c5=Child.create({name: "Sevan"})
 
 
 																				  
-v1=Video.create({title: "test video 1", description: "Running in a diaper", url: "https://youtu.be/o3IZ61FM5Bc", shared: true})
-v2=Video.create({title: "test video 2", description: "Chef Trevor", url: "https://youtu.be/V_j1aOajduw", shared: false})
-v3=Video.create({title: "test video 3", description: "Charlie and the new toy", url: "https://youtu.be/cgQYBMMaPkQ", shared: true})
-v4=Video.create({title: "test video 4", description: "Walk the dog", url: "https://youtu.be/kdQZJIu9ShU", shared: true})
-v5=Video.create({title: "test video 5", description: "Dancing with Tigger", url: "https://youtu.be/LHeua9L8L34", shared: true})
-v6=Video.create({title: "test video 6", description: "Guitar lessors", url: "https://youtu.be/3zRVgOyLs2I", shared: false})
-v7=Video.create({title: "test video 7", description: "I don't need sleep", url: "https://youtu.be/J4h4S8lXYcM", shared: true})
-v8=Video.create({title: "test video 8", description: "Jump, jump, jump", url: "https://youtu.be/gYYBaM1fsVQ", shared: true})
+v1=Video.create({title: "test video 1", description: "Running in a diaper", url: "https://www.youtube.com/embed/o3IZ61FM5Bc", shared: true})
+v2=Video.create({title: "test video 2", description: "Chef Trevor", url: "https://www.youtube.com/embed/V_j1aOajduw", shared: false})
+v3=Video.create({title: "test video 3", description: "Charlie and the new toy", url: "https://www.youtube.com/embed/cgQYBMMaPkQ", shared: true})
+v4=Video.create({title: "test video 4", description: "Walk the dog", url: "https://www.youtube.com/embed/kdQZJIu9ShU", shared: true})
+v5=Video.create({title: "test video 5", description: "Dancing with Tigger", url: "https://www.youtube.com/embed/LHeua9L8L34", shared: true})
+v6=Video.create({title: "test video 6", description: "Guitar lessors", url: "https://www.youtube.com/embed/3zRVgOyLs2I", shared: false})
+v7=Video.create({title: "test video 7", description: "I don't need sleep", url: "https://www.youtube.com/embed/J4h4S8lXYcM", shared: true})
+v8=Video.create({title: "test video 8", description: "Jump, jump, jump", url: "https://www.youtube.com/embed/gYYBaM1fsVQ", shared: true})
 
 
 

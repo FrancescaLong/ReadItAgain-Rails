@@ -15,8 +15,8 @@ class VideosController < ApplicationController
 		@child = Child.find(params[:child_id]) #need to be able to map to multiple children or none
 		video_params = params.require(:video).permit(:childid, :title, :description)
 		@video = Video.create(video_params)
-		@child.videos << @video
-		current_user.videos << @post
+		@child.user.videos << @video
+		current_user.videos << @uservideo
 		current_user.save
 		redirect_to "/children/#{@child.slug}" # maybe redirect somewhere else? user page? videos page?
 	end
@@ -24,9 +24,10 @@ class VideosController < ApplicationController
 	def show
 		@user = current_user
 		@logged_in = logged_in?
+		@videos = Video.all
 		@video = Video.find(params[:id])
-		@child = Child.find(@video.child_id)
-		@include = @user.include? @video
+		@child = User.find(@video.user_id)
+		@show = @user.show? @video
 		@hide = @user.hide? @video
 		render :show
 	end

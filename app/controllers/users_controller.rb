@@ -3,7 +3,7 @@ class UsersController < ApplicationController
 
 	def index
 		@user = current_user
-			@logged_in = logged_in?
+		@logged_in = logged_in?
 	end
 
 	# creates a new user to pass to other forms later
@@ -42,14 +42,14 @@ class UsersController < ApplicationController
 			@logged_in=false
 		end
 		id = params[:id]
-		user = User.friendly.find(params[:id])
+		@user = User.friendly.find(params[:id])
 	end
 
 	def update
 		id = params[:id]
 		user = User.friendly.find(params[:id])
 
-		update_attributes = paramas.require(:user).permit(:name, :email, :password, :children)
+		update_attributes = params.require(:user).permit(:name, :email, :password, :children)
 		user.update_attributes(update_attributes)
 		redirect_to user
 	end

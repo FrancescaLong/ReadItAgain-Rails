@@ -15,6 +15,8 @@ Rails.application.routes.draw do
 
   delete "/logout", to: "sessions#destroy"
 
+  get "/users/:id", to: "users#show"
+
   #children routes
   get "/children", to: "children#index", as:"children"
 

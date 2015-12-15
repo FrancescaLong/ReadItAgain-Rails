@@ -39,6 +39,8 @@ gem 'rails_12factor', group: :production
 
 gem 'puma'
 
+gem 'google-api-client', '>0.7'
+
 # Use Unicorn as the app server
 # gem 'unicorn'
 

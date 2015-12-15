@@ -1,7 +1,7 @@
 class ChildrenController < ApplicationController
 	def index
 		@user = current_user
-		@children = Children.all?
+		@children = Children.all
 			@logged_in = logged_in?
 		render "/users/index"
 	end
