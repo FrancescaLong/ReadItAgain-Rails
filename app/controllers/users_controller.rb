@@ -24,7 +24,7 @@ class UsersController < ApplicationController
 	end
 
 	def show
-		@user = User.friendly.find(params[:id])
+		@user = User.find(params[:id])
 		if logged_in?
 			@logged_in=true
 		else
