@@ -17,7 +17,7 @@ class ChildrenController < ApplicationController
 		p params[:id]
 		@videos = Video.where(:child_id => @child.id).order(updated_at: :desc)
 			@video = Video.new
-			render :show
+		render :show
 		end
 
 end

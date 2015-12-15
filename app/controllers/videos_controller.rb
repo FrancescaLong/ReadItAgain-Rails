@@ -16,7 +16,7 @@ class VideosController < ApplicationController
 		video_params = params.require(:video).permit(:childid, :title, :description)
 		@video = Video.create(video_params)
 		@child.user.videos << @video
-		current_user.videos << @uservideo
+		current_user.videos << @video
 		current_user.save
 		redirect_to "/children/#{@child.slug}" # maybe redirect somewhere else? user page? videos page?
 	end
@@ -27,8 +27,8 @@ class VideosController < ApplicationController
 		@videos = Video.all
 		@video = Video.find(params[:id])
 		@child = User.find(@video.user_id)
-		@show = @user.show? @video
-		@hide = @user.hide? @video
+		# @show = @user.show? @video
+		# @hide = @user.hide? @video
 		render :show
 	end
 
@@ -55,6 +55,7 @@ class VideosController < ApplicationController
 		redirect_to "/children/#{pretty}"
 	end
 
+=begin
 	def include
 		id = params[:id]
 		video = Video.find(id)
@@ -72,5 +73,7 @@ class VideosController < ApplicationController
 		owner.save
 		redirect_to "/videos/#{id}"
 	end
+=end
+
 	
 end

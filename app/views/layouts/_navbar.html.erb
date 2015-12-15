@@ -10,19 +10,29 @@
         <a href="/users/<%= @user.id %>"><% else %><a href="/"><%end%><img src="" height="55"></a></div>
   <div class="navbar-collapse collapse navbar-success-collapse">
     <ul class="nav navbar-nav">
-      <li class="active"><a href="/users">Instructions</a></li>
-              <% if @logged_in %>
+
+    <% if @logged_in %>
+      <li class = "dropdown">
+      <a href="bootstrap-elements.html" data-target="#" class-"dropdown-toggle" data-toggle="dropdown">Books <b class="caret"></b></a>
+        <ul class = "dropdown-menu">
+          <li><a href="/videos">All Books</a></li>
+          <li><a href="/videos/new">Add a New Book</a></li>
+          <li><a href="/videos/edit">Edit a Book</a></li>
+        </ul>
+
+
       <li class = "dropdown">
       <a href="bootstrap-elements.html" data-target="#" class-"dropdown-toggle" data-toggle="dropdown">Children <b class="caret"></b></a>
         <ul class = "dropdown-menu">
           <% @children.each do |child| %>
           <div>
           <li><a href = "/children/<%= child.id %>"><%= child.name %></a></li> 
-  <% end %>
-        </ul>
-        <li class="active"><a href="/videos">All Books</a></li>
+    <% end unless @children.nil? %>
 
-    </ul>
+      </ul>
+        <li class="active"><a href="/videos">All Books</a></li>
+      </ul>
+
     <ul class="nav navbar-nav navbar-right">
 
       <li><a href="/users/<%= @user.id %>/edit">Edit Profile</a></li>
