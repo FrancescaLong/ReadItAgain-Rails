@@ -11,18 +11,20 @@
   <div class="navbar-collapse collapse navbar-success-collapse">
     <ul class="nav navbar-nav">
       <li class="active"><a href="/users">Instructions</a></li>
+              <% if @logged_in %>
       <li class = "dropdown">
       <a href="bootstrap-elements.html" data-target="#" class-"dropdown-toggle" data-toggle="dropdown">Children <b class="caret"></b></a>
         <ul class = "dropdown-menu">
-          <li><a href="/cities/san-francisco">Child 1</a></li>
-          <li><a href="/cities/london">Child 2</a></li>
-          <li><a href="/cities/gibraltar">Child 3</a></li>
+          <% @children.each do |child| %>
+          <div>
+          <li><a href = "/children/<%= child.id %>"><%= child.name %></a></li> 
+  <% end %>
         </ul>
-        <li class="active"><a href="/posts">All Posts</a></li>
+        <li class="active"><a href="/videos">All Books</a></li>
 
     </ul>
     <ul class="nav navbar-nav navbar-right">
-        <% if @logged_in %>
+
       <li><a href="/users/<%= @user.id %>/edit">Edit Profile</a></li>
 			<li><%= link_to "Log out", logout_path, method: :delete %></li>
 		<% else %>

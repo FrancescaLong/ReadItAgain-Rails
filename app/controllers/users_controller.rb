@@ -30,6 +30,8 @@ class UsersController < ApplicationController
 		else
 			@logged_in=false
 		end
+		@children = Child.where(:user_id => params[:id])
+		@videos = Video.where(:user_id => params[:id])
 		render :show
 	end
 

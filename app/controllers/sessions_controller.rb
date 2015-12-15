@@ -18,6 +18,6 @@ class SessionsController < ApplicationController
 
 	def destroy
 		logout
-		redirect to "/"
+		redirect_to "/"
 	end
 end

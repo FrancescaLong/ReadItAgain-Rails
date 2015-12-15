@@ -1,0 +1,37 @@
+
+
+<h1>Your Books</h1>
+  <% @videos.each do |post| %>
+    <div class="yourpost">
+      <h4><a href = "/videos/<%= video.id %>"><%= video.title %></a></h4> 
+      <p><%= video.description %></p>
+        <% post_city = City.find(post.city_id)%>
+        Post about <%=post_city.name%>, with a score of <%= post.get_likes.size - post.get_dislikes.size%>.
+  </div>
+
+<!-- <div class="col-md-6"> -->
+<div id = "trophy-case">
+<h1> Achievements!</h1>
+  <% if @user.sf_first != true && @user.gib_first != true && @user.lon_first != true && @user.sf_tenth != true && @user.gib_tenth != true && @user.lon_tenth != true %>
+    <div class = "icon-preview"><i class="mdi-av-new-releases"></i><span>You have no trophies! Get Posting!</span></div>
+    <% end %>
+	</div>
+<!-- <div class="row"> -->
+<div class="col-sm-3">
+<!-- first city post -->
+<% if @user.sf_first == true %>
+  <div class = "badgediv icon-preview">
+    <img src="https://cloud.githubusercontent.com/assets/13576777/11205276/40f4fb54-8cbb-11e5-8768-b929a9394838.png" height="200"><br><i class="mdi-action-favorite"></i><span>You posted once in San Fransisco!</span></div>
+    <% else %>
+  <div class = "badgediv">
+    <img src="https://cloud.githubusercontent.com/assets/13576777/11205280/41fa05ee-8cbb-11e5-8fcd-e6f9c84b07ec.png" height="200"><br>
+Post in San Francisco to unlock!
+</div>  
+<% end %>
+<% if @user.gib_first == true %>
+  <div class = "badgediv icon-preview"><img src="https://cloud.githubusercontent.com/assets/13576777/11205274/40e81286-8cbb-11e5-9141-4562d77d185a.png" height="200"><br><i class="mdi-content-flag"></i><span>You posted once in Gibraltar!</span></div>
+    <% else %>
+  <div class = "badgediv">
+    <img src="https://cloud.githubusercontent.com/assets/13576777/11205280/41fa05ee-8cbb-11e5-8fcd-e6f9c84b07ec.png" height="200"><br>
+<% end %>
+</div>
