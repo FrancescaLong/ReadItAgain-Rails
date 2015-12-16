@@ -1,1 +1,14 @@
 <%= render partial: "/layouts/navbar" %>
+
+<h1>Add a Child</h1>
+<%= form_for @child do |f| %>
+  <div>
+    <%= f.text_field :name, placeholder: "Child's Name", size: "60x12", class: "form" %>
+  </div><br>
+
+
+  <div>
+    <%= f.hidden_field :user_id %>
+  </div>
+  <%= f.submit "Submit", :class => "btn btn-material-indigo" %>
+<% end %> 
