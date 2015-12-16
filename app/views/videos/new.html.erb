@@ -1,1 +1,19 @@
 <%= render partial: "/layouts/navbar" %>
+
+<h1>New Book</h1>
+<%= form_for @video do |f| %>
+  <div>
+    <%= f.text_field :title, placeholder: "Book Title", class: "form" %>
+  </div><br>
+  <div>
+    <%= f.text_area :description, placeholder: "Description of your book", class: "form" %>
+  </div><br>
+  <div>
+    <%= f.url_field :url, placeholder: "YouTube 'Share' address", class: "form" %>  
+  </div><br>
+  <div>
+  	<%= check_box_tag(:shared, true) %>
+  	<%= label_tag(:shared, "Share this book with other users") %>
+  </div>
+  <%= f.submit "Submit", :class => "btn btn-material-indigo" %>
+<% end %> 

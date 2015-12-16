@@ -24,7 +24,7 @@ class UsersController < ApplicationController
 	end
 
 	def show
-		@user = User.find(params[:id])
+		@user = User.friendly.find(params[:id])
 		if logged_in?
 			@logged_in=true
 		else
@@ -47,7 +47,7 @@ class UsersController < ApplicationController
 
 	def update
 		id = params[:id]
-		user = User.friendly.find(params[:id])
+		user = User.friendly.find(params[:id]) 
 
 		update_attributes = params.require(:user).permit(:name, :email, :password, :children)
 		user.update_attributes(update_attributes)

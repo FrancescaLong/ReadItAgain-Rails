@@ -7,18 +7,21 @@ class VideosController < ApplicationController
 	end
 
 	def new
+		@user = current_user
+		@logged_in = logged_in?
 		@video = Video.new
 		render :new # render new video
 	end
 
 	def create
-		@child = Child.find(params[:child_id]) #need to be able to map to multiple children or none
-		video_params = params.require(:video).permit(:childid, :title, :description)
+		# @child = Child.friendly.find(params[:child_id]) #need to be able to map to multiple children or none
+		video_params = params.require(:video).permit(:childid, :title, :description, :url)
 		@video = Video.create(video_params)
-		@child.user.videos << @video
+		# @child.user.videos << @video
 		current_user.videos << @video
 		current_user.save
-		redirect_to "/children/#{@child.slug}" # maybe redirect somewhere else? user page? videos page?
+		# redirect_to "/children/#{@child.slug}" # maybe redirect somewhere else? user page? videos page?
+		redirect_to "/users/#{current_user.id}"
 	end
 
 	def show
