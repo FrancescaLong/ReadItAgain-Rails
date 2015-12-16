@@ -24,7 +24,16 @@ h5 {
   color: black;
   text-align: center;
 }
-
+.green {
+  color: green;
+}
+.citycard {
+  width: 60%;
+  margin: auto;
+  padding: .5em;
+  background-color: white;
+  text-align: center;
+}  
 /* Bootstrap welcome theme  */
 /*
 

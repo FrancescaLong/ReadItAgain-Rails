@@ -17,17 +17,61 @@
 
     <h3>Your Videos</h3>
     <% @videos.each do |video| %>
-    <div class="yourpost">
-      <h4><a href = "/videos/<%= video.id %>"><%= video.title %></a></h4> 
-      <h5><%= video.description %></h5>
+        <div class="yourpost">
+          <span class="glyphicon glyphicon-heart"></span>
+          <span class="glyphicon glyphicon-book"></span>
+          <span class="glyphicon glyphicon-heart"></span>
+          <span class="glyphicon glyphicon-book"></span>
+          <span class="glyphicon glyphicon-heart"></span>
+          <span class="glyphicon glyphicon-book"></span>
+          <span class="glyphicon glyphicon-heart"></span>
+          <span class="glyphicon glyphicon-book"></span>
+          <span class="glyphicon glyphicon-heart"></span>
+          <span class="glyphicon glyphicon-book"></span>
+          <span class="glyphicon glyphicon-heart"></span>
+          <span class="glyphicon glyphicon-book"></span>
+          <span class="glyphicon glyphicon-heart"></span>
+          <span class="glyphicon glyphicon-book"></span>
+          <span class="glyphicon glyphicon-heart"></span>
+          <span class="glyphicon glyphicon-book"></span>
+          <span class="glyphicon glyphicon-heart"></span>
+          <span class="glyphicon glyphicon-book"></span>
+          <span class="glyphicon glyphicon-heart"></span>
+          <h4><a href = "/videos/<%= video.id %>"><%= video.title %></a></h4> 
+          <h5><%= video.description %></h5>
 
-      <%= render "video.embed" %>
+          <% if @user.id == video.user_id %>
+          <a href="/videos/<%=video.id%>/edit"><button type="button" class="btn btn-material-green">Edit</button></a>
+          <% end %>
 
+          <button class="btn btn-raised btn-material-deep-orange" data-toggle="modal" data-target="#complete-dialog">Delete</button><br>
+
+          <iframe width="620" height="415" src="<%= video.url %>" frameborder="0" allowfullscreen></iframe>
+
+        </div>
+
+
+      </div>
     </div>
-  <% end %>
 
-  </div>
-</div>
+    <div id="complete-dialog" class="modal fade" tabindex="-1">
+      <div class="modal-dialog">
+        <div class="modal-content">
+          <div class="modal-header">
+            <button type="button" class="close" data-dismiss="modal" aria-hidden="true">×</button>
+            <h4 class="modal-title">Confirm</h4>
+          </div>
+          <div class="modal-body">
 
+            <p>Are sure you want to delete "<%= video.title %>" ?</p>
+            
 
+          </div>
+          <div class="modal-footer">
+            <%= button_to "Delete", video, method: :delete , class: "btn btn-raised btn-material-red"%>
+          </div>
+        </div>
+      </div>
+    </div>
+    <% end %>
 

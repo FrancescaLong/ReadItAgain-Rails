@@ -29,6 +29,16 @@ c5=Child.create({name: "Sevan"})
 
 
 																				  
+v1=Video.create({title: "test video 1", description: "Running in a diaper", url: "https://www.youtube.com/embed/o3IZ61FM5Bc", shared: true})
+v2=Video.create({title: "test video 2", description: "Chef Trevor", url: "https://www.youtube.com/embed/V_j1aOajduw", shared: false})
+v3=Video.create({title: "test video 3", description: "Charlie and the new toy", url: "https://www.youtube.com/embed/cgQYBMMaPkQ", shared: true})
+v4=Video.create({title: "test video 4", description: "Walk the dog", url: "https://www.youtube.com/embed/kdQZJIu9ShU", shared: true})
+v5=Video.create({title: "test video 5", description: "Dancing with Tigger", url: "https://www.youtube.com/embed/LHeua9L8L34", shared: true})
+v6=Video.create({title: "test video 6", description: "Guitar lessors", url: "https://www.youtube.com/embed/3zRVgOyLs2I", shared: false})
+v7=Video.create({title: "test video 7", description: "I don't need sleep", url: "https://www.youtube.com/embed/J4h4S8lXYcM", shared: true})
+v8=Video.create({title: "test video 8", description: "Jump, jump, jump", url: "https://www.youtube.com/embed/gYYBaM1fsVQ", shared: true})
+
+=begin
 v1=Video.create({title: "test video 1", description: "Running in a diaper", embed: '<iframe width="420" height="315" src="https://www.youtube.com/embed/o3IZ61FM5Bc" frameborder="0" allowfullscreen></iframe>', shared: true})
 v2=Video.create({title: "test video 2", description: "Chef Trevor", embed: '<iframe width="420" height="315" src="https://www.youtube.com/embed/V_j1aOajduw" frameborder="0" allowfullscreen></iframe>', shared: false})
 v3=Video.create({title: "test video 3", description: "Charlie and the new toy", embed: '<iframe width="420" height="315" src="https://www.youtube.com/embed/cgQYBMMaPkQ" frameborder="0" allowfullscreen></iframe>', shared: true})
@@ -37,8 +47,7 @@ v5=Video.create({title: "test video 5", description: "Dancing with Tigger", embe
 v6=Video.create({title: "test video 6", description: "Guitar lessors", embed: '<iframe width="420" height="315" src="https://www.youtube.com/embed/3zRVgOyLs2I" frameborder="0" allowfullscreen></iframe>', shared: false})
 v7=Video.create({title: "test video 7", description: "I don't need sleep", embed: '<iframe width="420" height="315" src="https://www.youtube.com/embed/J4h4S8lXYcM" frameborder="0" allowfullscreen></iframe>', shared: true})
 v8=Video.create({title: "test video 8", description: "Jump, jump, jump", embed: '<iframe width="420" height="315" src="https://www.youtube.com/embed/gYYBaM1fsVQ" frameborder="0" allowfullscreen></iframe>', shared: true})
-
-
+=end
 
 u3.children << c1
 u4.children << c2

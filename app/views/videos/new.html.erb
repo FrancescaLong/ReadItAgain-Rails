@@ -8,9 +8,9 @@
   <div>
     <%= f.text_area :description, placeholder: "Description of your book", size: "60x3", class: "form" %>
   </div><br><br>
-  <div><h5>From the YouTube page, click on the Share link below the video.<br>Below that, click on the Embed option and copy all<br>of the text from the box and paste it here in the box below.</h5></div>
+  <div><h5 class="green citycard">1. From the YouTube page, click on the Share link below the video.<br><br>2. Below that, click on the Embed option and copy the https:// part<br>from the box and paste it here in the box below.<br><br>3. It should look something like this -<br>https://www.youtube.com/embed/aBCO9De1F6G</h5><br></div><br>
   <div>
-    <%= f.text_field :embed, placeholder: "YouTube 'EMBED' code - all of it", size: "60x12", class: "form" %>  
+    <%= f.text_field :url, placeholder: "YouTube 'EMBED' code - just the https:// part", size: "60x12", class: "form" %>  
   </div><br>
   <div>
   	<%= f.check_box :shared, size: "2x2" %>

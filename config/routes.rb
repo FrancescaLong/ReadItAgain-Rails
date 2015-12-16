@@ -20,6 +20,8 @@ Rails.application.routes.draw do
   #children routes
   get "/children", to: "children#index", as:"children"
 
+  get "/children/new", to: "children#new", as: "new_child"
+
   get "/children/:id", to: "children#show"
 
   get "/children/:id/edit", to: "children#edit"

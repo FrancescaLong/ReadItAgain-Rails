@@ -14,7 +14,7 @@ class VideosController < ApplicationController
 	end
 
 	def create
-		video_params = params.require(:video).permit(:title, :description, :embed, :shared, :userid)
+		video_params = params.require(:video).permit(:title, :description, :url, :shared, :userid)
 		@video = Video.create(video_params)
 		# @child.user.videos << @video
 		current_user.videos << @video
@@ -26,11 +26,12 @@ class VideosController < ApplicationController
 		@user = current_user
 		@logged_in = logged_in?
 		@videos = Video.all
-		@video = Video.find(params[:id])
-		@child = User.find(@video.user_id)
+		# @video = Video.find(params[:id])
+		# @child = User.find(@video.user_id)
 		# @show = @user.show? @video
 		# @hide = @user.hide? @video
-		render :show
+		# render :show
+		redirect_to "/users/#{current_user.id}"
 	end
 
 	def edit
@@ -42,7 +43,7 @@ class VideosController < ApplicationController
 		id = params[:id]
 			video = Video.find(id)
 
-			update_attributes = params.require(:video).permit(:title, :description)
+			updated_attributes = params.require(:video).permit(:title, :description, :url, :shared)
 			video.update_attributes(updated_attributes)
 			redirect_to video
 	end
@@ -55,7 +56,10 @@ class VideosController < ApplicationController
 		redirect_to "children/#{child.id}"
 	end
 
-=begin
+
+end
+
+=begin   IF THIS IS USED, MOVE IT BACK ABOVE THE END ITEM
 	def include
 		id = params[:id]
 		video = Video.find(id)
@@ -76,4 +80,4 @@ class VideosController < ApplicationController
 =end
 
 	
-end
+
