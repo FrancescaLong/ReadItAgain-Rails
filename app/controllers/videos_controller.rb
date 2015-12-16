@@ -14,13 +14,11 @@ class VideosController < ApplicationController
 	end
 
 	def create
-		# @child = Child.friendly.find(params[:child_id]) #need to be able to map to multiple children or none
-		video_params = params.require(:video).permit(:childid, :title, :description, :url)
+		video_params = params.require(:video).permit(:title, :description, :embed, :shared, :userid)
 		@video = Video.create(video_params)
 		# @child.user.videos << @video
 		current_user.videos << @video
 		current_user.save
-		# redirect_to "/children/#{@child.slug}" # maybe redirect somewhere else? user page? videos page?
 		redirect_to "/users/#{current_user.id}"
 	end
 
@@ -54,8 +52,7 @@ class VideosController < ApplicationController
 		video = Video.find(id)
 		child = Child.find(video.child_id)
 		video.destroy
-		pretty = child.slug
-		redirect_to "/children/#{pretty}"
+		redirect_to "children/#{child.id}"
 	end
 
 =begin

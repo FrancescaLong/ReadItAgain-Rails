@@ -8,8 +8,7 @@ class User < ActiveRecord::Base
 		@user = User.find_by({email: params[:email]})
 		@user.try(:authenticate, params[:password])
 	end
-	extend FriendlyId
-	friendly_id :name, use: :slugged
+
 	# acts_as_voter - could think about using this to include / show videos?
 	
 end

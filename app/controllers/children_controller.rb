@@ -8,7 +8,7 @@ class ChildrenController < ApplicationController
 
 	def show
 		@user = current_user
-		@child = Child.friendly.find(params[:id])
+		@child = Child.find(params[:id])
 		if logged_in?
 			@logged_in=true
 		else

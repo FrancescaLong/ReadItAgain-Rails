@@ -9,7 +9,7 @@ class SessionsController < ApplicationController
 		@user = User.confirm(user_params)
 		if @user
 			login(@user)
-			redirect_to "/users/#{@user.slug}"
+			redirect_to "/users/#{@user.id}"
 		else
 			# flash[:error] = "Your username and password didn't match! Please try again, but better."
 			redirect_to "/sign_in"

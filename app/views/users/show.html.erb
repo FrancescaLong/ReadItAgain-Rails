@@ -21,8 +21,8 @@
       <h4><a href = "/videos/<%= video.id %>"><%= video.title %></a></h4> 
       <h5><%= video.description %></h5>
 
-      <iframe width="720" height="640" src="<%= video.url %>" frameborder="0" allowfullscreen>
-      </iframe>
+      <%= render "video.embed" %>
+
     </div>
   <% end %>
 

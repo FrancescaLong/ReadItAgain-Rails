@@ -3,17 +3,21 @@
 <h1>New Book</h1>
 <%= form_for @video do |f| %>
   <div>
-    <%= f.text_field :title, placeholder: "Book Title", class: "form" %>
+    <%= f.text_field :title, placeholder: "Book Title", size: "60x12", class: "form" %>
   </div><br>
   <div>
-    <%= f.text_area :description, placeholder: "Description of your book", class: "form" %>
+    <%= f.text_area :description, placeholder: "Description of your book", size: "60x3", class: "form" %>
+  </div><br><br>
+  <div><h5>From the YouTube page, click on the Share link below the video.<br>Below that, click on the Embed option and copy all<br>of the text from the box and paste it here in the box below.</h5></div>
+  <div>
+    <%= f.text_field :embed, placeholder: "YouTube 'EMBED' code - all of it", size: "60x12", class: "form" %>  
   </div><br>
   <div>
-    <%= f.url_field :url, placeholder: "YouTube 'Share' address", class: "form" %>  
-  </div><br>
+  	<%= f.check_box :shared, size: "2x2" %>
+    <%= f.label "Share this book with other users" %>
+  </div>
   <div>
-  	<%= check_box_tag(:shared, true) %>
-  	<%= label_tag(:shared, "Share this book with other users") %>
+    <%= f.hidden_field :user_id %>
   </div>
   <%= f.submit "Submit", :class => "btn btn-material-indigo" %>
 <% end %> 

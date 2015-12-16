@@ -13,7 +13,7 @@ class UsersController < ApplicationController
 
 	def create
 		user_params = params.require(:user).permit(:name, :email, :password) # , :children
-		@user = User.friendly.create(user_params)
+		@user = User.create(user_params)
 		if @user.save
 			session[:user_id] = @user.id
 			redirect_to @user, flash: { success: "Successfully signed up!" }
@@ -24,7 +24,7 @@ class UsersController < ApplicationController
 	end
 
 	def show
-		@user = User.friendly.find(params[:id])
+		@user = User.find(params[:id])
 		if logged_in?
 			@logged_in=true
 		else
@@ -42,12 +42,12 @@ class UsersController < ApplicationController
 			@logged_in=false
 		end
 		id = params[:id]
-		@user = User.friendly.find(params[:id])
+		@user = User.find(params[:id])
 	end
 
 	def update
 		id = params[:id]
-		user = User.friendly.find(params[:id]) 
+		user = User.find(params[:id]) 
 
 		update_attributes = params.require(:user).permit(:name, :email, :password, :children)
 		user.update_attributes(update_attributes)
