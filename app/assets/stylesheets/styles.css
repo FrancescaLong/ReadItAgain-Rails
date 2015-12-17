@@ -27,6 +27,9 @@ h5 {
 .green {
   color: green;
 }
+.black {
+  color: black;
+}
 .citycard {
   width: 60%;
   margin: auto;
@@ -35,6 +38,9 @@ h5 {
   text-align: center;
 }  
 .dropdown {
+  color: white;
+}
+.dropdown-menu {
   color: black;
 }
 

@@ -15,7 +15,7 @@
 	  <div>
     <%= f.text_field :embed, placeholder: "YouTube 'EMBED' code - all of it", size: "60x12", class: "form" %>  
   </div><br>
-  <div>
+  <div class="green">
   	<%= f.check_box :shared, size: "2x2" %>
     <%= f.label "Share this book with other users" %>
   </div>
@@ -24,3 +24,30 @@
 <% end %>
 </div>
 <div class="col-md-3"></div>
+
+<container
+<div class="col-md-12"></div><br>
+
+
+    <button class="btn btn-raised btn-material-deep-orange" data-toggle="modal" data-target="#complete-dialog">Delete this Video </button><br>
+
+    <div id="complete-dialog" class="modal fade" tabindex="-1">
+      <div class="modal-dialog">
+        <div class="modal-content">
+          <div class="modal-header">
+            <button type="button" class="close" data-dismiss="modal" aria-hidden="true">×</button>
+            <h4 class="modal-title">Confirm</h4>
+          </div>
+          <div class="modal-body">
+
+            <p class="black">Are sure you want to delete "<%= @video.title %>" ?</p>
+            
+
+          </div>
+          <div class="modal-footer">
+            <%= button_to "Delete", @video, method: :delete , class: "btn btn-raised btn-material-deep-orange"%>
+          </div>
+        </div>
+      </div>
+    </div>
+</container>
