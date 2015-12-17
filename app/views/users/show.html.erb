@@ -45,7 +45,7 @@
 
           <button class="btn btn-raised btn-material-deep-orange" data-toggle="modal" data-target="#complete-dialog">Delete</button><br>
 
-          <iframe width="620" height="415" src="<%= video.url %>" frameborder="0" allowfullscreen></iframe>
+          <%= video.embed.html_safe %>
 
         </div>
 

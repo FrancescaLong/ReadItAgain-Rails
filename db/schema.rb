@@ -11,7 +11,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20151216072352) do
+ActiveRecord::Schema.define(version: 20151217052530) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
@@ -40,7 +40,7 @@ ActiveRecord::Schema.define(version: 20151216072352) do
     t.datetime "updated_at",  null: false
     t.boolean  "shared"
     t.integer  "user_id"
-    t.string   "url"
+    t.string   "embed"
   end
 
   add_index "videos", ["user_id"], name: "index_videos_on_user_id", using: :btree
