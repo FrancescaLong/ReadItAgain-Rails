@@ -51,9 +51,9 @@ class VideosController < ApplicationController
 	def destroy
 		id = params[:id]
 		video = Video.find(id)
-		child = Child.find(video.child_id)
+		# child = Child.find(video.child_id)
 		video.destroy
-		redirect_to "children/#{child.id}"
+		redirect_to "/users/#{current_user.id}"
 	end
 
 

@@ -15,15 +15,10 @@ class ChildrenController < ApplicationController
 			@logged_in=false
 		end
 		p params[:id]
-		@videos = Video.where(:child_id => @child.id).order(updated_at: :desc)
-			@video = Video.new
+		# @videos = Video.where(:child_id => @child.id).order(updated_at: :desc)
+			# @video = Video.new
 		render :show
 		end
-
-
-
-
-
 
 
 	def new
@@ -43,6 +38,8 @@ class ChildrenController < ApplicationController
 	end
 
 	def edit
+		@user = current_user
+		@logged_in = logged_in?
 		id = params[:id]
 			@child = Child.find(id)
 	end
@@ -59,7 +56,7 @@ class ChildrenController < ApplicationController
 	def destroy
 		id = params[:id]
 		child = Child.find(id)
-		video = Video.find(child.video_id)
+		# video = Video.find(child.video_id)
 		child.destroy
 		redirect_to "/users/#{current_user.id}"
 	end

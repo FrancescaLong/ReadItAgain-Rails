@@ -6,16 +6,15 @@
 <br>
 
 <br>
-<br>
 <div class="row">
   <div class="col-md-12">
-    <h3>Your Children</h3>
+<!--     <h3>Your Children</h3>
     <% @children.each do |child| %>
     
     <h4><a href = "/children/<%= child.id %>"><%= child.name %></a></h4> 
-    <% end %>
+    <% end %> -->
 
-    <h3>Your Videos</h3>
+    <h3>Your Books</h3>
     <% @videos.each do |video| %>
         <div class="yourpost">
           <span class="glyphicon glyphicon-heart"></span>
@@ -68,7 +67,7 @@
 
           </div>
           <div class="modal-footer">
-            <%= button_to "Delete", video, method: :delete , class: "btn btn-raised btn-material-red"%>
+            <%= button_to "Delete", video, method: :delete , class: "btn btn-raised btn-material-deep-orange"%>
           </div>
         </div>
       </div>
