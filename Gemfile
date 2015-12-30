@@ -39,6 +39,16 @@ gem 'puma'
 
 gem 'google-api-client', '>0.7'
 
+# adds in the YouTube gem
+gem 'yt', '~> 0.13.7'
+
+# autoprefixer-rails is recommended for use with Bootstrap to automatically 
+# add browser vendor prefixes.
+gem 'autoprefixer-rails'
+
+# Bootstrap for styling purposes, but it’s not required
+gem 'bootstrap-sass', '~> 3.3.0.1'
+
 # Use Unicorn as the app server
 # gem 'unicorn'
 
