@@ -49,6 +49,9 @@ gem 'autoprefixer-rails'
 # Bootstrap for styling purposes, but it’s not required
 gem 'bootstrap-sass', '~> 3.3.0.1'
 
+# for the YouTube API - API from google - gem from https://rubygems.org/gems/thin/versions/1.6.4
+gem 'thin', '~> 1.6', '>= 1.6.4'
+
 # Use Unicorn as the app server
 # gem 'unicorn'
 

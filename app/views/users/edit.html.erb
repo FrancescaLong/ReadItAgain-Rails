@@ -13,7 +13,10 @@
 	<div>
 		<%= f.password_field :password, placeholder: "Password", class: "form-control floating-label"  %>
 	</div><br>
-	<%= f.submit "Edit", :class => "button red btn btn-material-indigo"%>
+	<div>
+	<%= f.submit "Edit", :class => "button red btn btn-material-green" %>
+	</div>
+	<%= f.submit "Cancel", :class => "button red btn btn-material-red" %>
 <% end %>
 <br>
 </div>

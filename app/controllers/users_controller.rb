@@ -54,6 +54,16 @@ class UsersController < ApplicationController
 		redirect_to user
 	end
 
+	before_filter :check_for_cancel, :only => [:create, :update]
+	def check_for_cancel
+		id = params[:id]
+		user = User.find(params[:id]) 
+
+  		if params[:commit] == "Cancel"
+    	   redirect_to user
+  		end
+	end
+
 end
 
 
