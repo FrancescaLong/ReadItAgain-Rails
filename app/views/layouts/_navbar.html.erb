@@ -17,7 +17,7 @@
           <a href="bootstrap-elements.html" data-target="#" class-"dropdown-toggle" data-toggle="dropdown">Books <b class="caret"></b></a>
             <ul class = "dropdown-menu">
               <!-- <li><a href="/videos">All Books</a></li> -->
-              <li><a href="/videos/new">Add a New Book</a></li>
+              <li><a class="black" href="/videos/new">Add a New Book</a></li>
               <!-- <li><a href="/videos/edit">Edit a Book</a></li> -->
             </ul>
 
@@ -26,9 +26,9 @@
             <ul class = "dropdown-menu">
               <% @children.each do |child| %>
                 <div>
-                  <li><a href = "/children/<%= child.id %>"><%= child.name %></a></li> 
+                  <li><a class="black" href = "/children/<%= child.id %>"><%= child.name %></a></li> 
                     <% end unless @children.nil? %>
-                  <li class="black"><a href = "/children/new" >Add a New Child</a></li>
+                  <li><a class="black" href = "/children/new" >Add a New Child</a></li>
             </ul>
     <!--<li class="active"><a href="/videos">All Books</a></li> -->
       </ul>
